@@ -69,11 +69,9 @@ public class JavaBank extends JFrame {
 
     static Account myAccounts[]  = new Account[MaxAccounts];
     
+    
     static int noAccounts = 0; 
-   // static ArrayList<Account> myAccounts = new ArrayList<Account>();//
-
-
-
+ 
     // constructor
     
     public JavaBank() {
@@ -300,7 +298,8 @@ public class JavaBank extends JFrame {
        
     	
         	if ((noAccounts <= 9) & (Name != "") & (Accountnum != 0))  {        		
-        		myAccounts[noAccounts] = new Account(Name,Accountnum,Balance);
+        		//myAccounts[noAccounts] = new Account(Name,Accountnum,Balance); 
+        		myAccounts.add(new CreditAccount(name,accountNum,balance));
         		AccountNames[noAccounts] = "USED";        		
         		//System.out.println(myAccounts[noAccounts].getaccountname());
         		//emptyAccount = i;         		
@@ -364,7 +363,8 @@ public class JavaBank extends JFrame {
              
             for (int i=0; i<noAccounts; i++) {
         	if ((myAccounts[i].getaccountnum() == Accountnum) && (Deposit>0)) {
-        		    myAccounts[i].setbalance(myAccounts[i].getbalance()+Deposit);        			
+        		    //myAccounts[i].setbalance(myAccounts[i].getbalance()+Deposit);
+        		myAccounts.get(i).setBalance(myAccounts.get(i).getBalance()+deposit);
         		    displayJTextArea.setText(myAccounts[i].getaccountname() + " " + myAccounts[i].getaccountnum() + " " + myAccounts[i].getbalance());
         	}
         		
