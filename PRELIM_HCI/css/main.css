@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.card { background:white;
+    width: 235px;
+    height: 400px;
+    border-radius: 10px 10px;
+    margin: 10px;
+
+}
+
+.card-image{
+  
+    height: 150px;
+    margin-bottom: 15px;
+    background-size: cover;
+}
+
+.bar-1{
+    background-image: url('https://png.pngitem.com/pimgs/s/25-250170_neon-rider-skins-cs-go-png-transparent-png.png');
+    border-radius: 10px;
+}
+
+.bar-2{
+    background-image: url('https://win.gg/ezoimgfmt/lh6.googleusercontent.com/EfWQD9R7HtFVIpE9ZwM8YR6sbZrcWlTPcGJhkeGfhuI1ChEiiMy2KKuVOjHyUgUYM--K_lz__YcWago61omZ9qGWPck-AjH1Bx3WwEHeR-w0irOHpC0ypg0xZe6d1ByeyBzRv9sS?ezimgfmt=rs:387x350/rscb13/ng:webp/ngcb13');
+    border-radius:10px;
+}
+
+.bar-3{
+    background-image: url('https://steamuserimages-a.akamaihd.net/ugc/1041967623772392130/B9C9CA20F7E35EB7C1A1CC59F02DCB7D3F719C27/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true');
+    border-radius: 10px;
+}
+.bar-4{
+    background-image: url('data:image/jpeg;base64,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');
+    border-radius: 10px;
+}
+.bar-5{
+    background-image: url('https://spng.pinpng.com/pngs/s/143-1432331_usp-s-cortex-cs-go-skin-usp-s.png');
+    border-radius: 10px;
+}
+.bar-6{
+    background-image: url('https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0vL3dzxG6eO6nYeDg8j4MqnWkyUHucB1ieqXrIrz2gHmr0ZvZDj3cNKUdlQ-YF6DqAS2w-i8h5Dt6Zib1zI97Ycw1ud8/330x192');
+    border-radius: 10px;
+}
+.bar-7{
+    background-image: url('https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_karambit_am_gamma_doppler_phase1_light_large.769cf2ab676ea2a7d7322c258f57bac8dca00336.png');
+    border-radius: 10px;
+}
+.bar-8{
+    background-image: url('https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_cu_p2000_fire_elemental_light_large.1e57d4d9f1c51e613c1923377aa55fab4b0ab1bc.png');
+    border-radius: 10px;
+}
+.bar-9{
+    background-image: url('https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_flip_am_doppler_phase1_light_large.64fbc93188ab47caa83c6bbde2f3940562f1b237.png');
+    border-radius: 10px;
+}
+.bar-10{
+    background-image: url('https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwW09Kzm7-FmP7mDLbUkmJE5fp9i_vG8MKhigft8kVsZmGhd4WTdwE9NFGErFnqxbzvg5W6uM7IyyRm7CYnti3YgVXp1vjKz5XZ/360fx360f');
+    border-radius: 10px;
+}
+.bar-11{
+    background-image: url('https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_gs_ak47_bloodsport_light_large.40f076f6b92e08acc37860923533aa9768795b2b.png');
+    border-radius: 10px;
+}
+.bar-12{
+    background-image: url('https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PLJTjtO7dGzh7-HnvD8J4Tdl3lW7Yt1jriVpY-migfh8hBtZTqgcI7Aewc2MgnWqwW-k-zph569uZyfnHMwpGB8slBfgSNs/330x192');
+    border-radius: 10px;
+}
+
+.card h2{
+    padding: 10px;
+}
+
+.card p{
+    padding: 10px;
+}
+
+.card a{
+    
+    background-color: black;
+    color:white;
+    padding: 15px 20px;
+    display:block;
+    text-align: center;
+    margin: 20px 50px;
+}
+
+.card:hover{
+    background-color: rgb(62,62,62);
+    color:white;
+    cursor:pointer;
+    transform: scale(1.03);
+    transition: all 1s ease;
+}

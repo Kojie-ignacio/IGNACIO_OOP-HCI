@@ -1,0 +1,97 @@
+body {
+    background: #eee;
+  }
+  .swatch {
+    float: left;
+    width: 300px;
+    height: 300px;
+    margin: 10px 20px;
+    box-shadow: 5px 5px 5px grey;
+  }
+  
+  .horz-stripes {
+    background: linear-gradient(#5FB9B0 50%, #413D65 0);
+    background-size: 100% 30px;
+  }
+  
+  .vert-stripes {
+    background: linear-gradient(to right, #FFE26F 50%, #563761 0);
+    background-size: 30px 100%;
+  }
+  
+  .diagonal-stripes {
+    background: repeating-linear-gradient(45deg, #4BC87F, #4BC87F 15px,  #29668A 0, #29668A 30px);
+  }
+  
+  .diagonal-stripes {
+    background: repeating-linear-gradient(45deg, #4BC87F, #4BC87F 15px,  #29668A 0, #29668A 30px);
+  }
+  
+  .tablecloth {
+    background: white;
+    background-image: linear-gradient(90deg, rgba(200, 0, 0, .5) 50%, transparent 0),
+      linear-gradient(rgba(200, 0, 0, .5) 50%, transparent 0);
+    background-size: 30px 30px;
+  }
+  
+  .blueprint-grid {
+    background: #58a;
+    background-image: linear-gradient(white 1px, transparent 0), linear-gradient(90deg, white 1px, transparent 0);
+    background-size: 30px 30px;
+  }
+  
+  .better-blueprint-grid {
+    background: #58a;
+    background-image:
+      linear-gradient(white 2px, transparent 0),
+      linear-gradient(90deg, white 2px, transparent 0),
+      linear-gradient(hsla(0, 0%, 100%, .3) 1px, transparent 0),
+      linear-gradient(90deg, hsla(0, 0%, 100%, .3) 1px, transparent 0);
+    background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+  }
+  
+  .ruler {
+    height: 60px;
+    margin-top: 120px;
+    background: #999;
+    background-image:
+      linear-gradient(90deg, white 2px, transparent 0),
+      linear-gradient(90deg, hsla(0, 0%, 100%, .3) 1px, transparent 0);
+    background-size: 75px 30px, 15px 15px;
+    background-repeat: repeat no-repeat;
+    background-position: 0 100%;
+  }
+  
+  .dots {
+    background: #655;
+    background-image: radial-gradient(tan 30%, transparent 0);
+    background-size: 30px 30px;
+  }
+  
+  .polka-dots {
+    background: #655;
+    background-image:
+      radial-gradient(tan 30%, transparent 0),
+      radial-gradient(tan 30%, transparent 0);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+  }
+  
+  .checkerboard {
+    background: #eee;
+    background-image:
+      linear-gradient(45deg, rgba(0,0,0, .25) 25%, transparent 0, transparent 75%, rgba(0,0,0, .25) 0),
+      linear-gradient(45deg, rgba(0,0,0, .25) 25%, transparent 0, transparent 75%, rgba(0,0,0, .25) 0);
+  
+    background-position: 0 0, 15px 15px, 15px 15px, 30px 30px;
+    background-size: 30px 30px;
+  }
+  
+  .svg-checkerboard {
+    background: #eee url('data:image/svg+xml,\
+              <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity=".25" >\
+              <rect x="50" width="50" height="50" />\
+              <rect y="50" width="50" height="50" />\
+              </svg>');
+  background-size: 30px 30px;
+  }
