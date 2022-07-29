@@ -1,0 +1,270 @@
+package mysqlconnection;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.border.BevelBorder;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Calendar;
+import java.awt.event.ActionEvent;
+import javax.swing.JTable;
+import java.awt.SystemColor;
+
+public class Dashboard extends JFrame {
+
+	private JPanel contentPane;
+	JLabel lblUser;
+	private JTextField txtStudentNo;
+	private JTextField txtStudentName;
+	private JTextField txtAddress;
+	private JTextField textField_3;
+	private JTable tableView;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Dashboard frame = new Dashboard();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	/**
+	 * Create the frame.
+	 * @return 
+	 */
+	public Dashboard() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 943, 501);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(238, 232, 170));
+		contentPane.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		lblUser = new JLabel();
+		lblUser.setBounds(515, 25, 273, 29);
+		lblUser.setText("user");
+		lblUser.setFont(new Font("Franklin Gothic Demi", Font.PLAIN, 16));
+		contentPane.add(lblUser);
+		
+		JLabel lblNewLabel = new JLabel("Student Record System");
+		lblNewLabel.setBounds(15, 12, 345, 42);
+		lblNewLabel.setFont(new Font("Barlow Condensed", Font.PLAIN, 32));
+		contentPane.add(lblNewLabel);
+		
+		txtStudentNo = new JTextField();
+		txtStudentNo.setBounds(162, 134, 296, 34);
+		contentPane.add(txtStudentNo);
+		txtStudentNo.setColumns(10);
+		
+		txtStudentName = new JTextField();
+		txtStudentName.setBounds(162, 190, 296, 34);
+		txtStudentName.setColumns(10);
+		contentPane.add(txtStudentName);
+		
+		txtAddress = new JTextField();
+		txtAddress.setBounds(162, 248, 296, 34);
+		txtAddress.setColumns(10);
+		contentPane.add(txtAddress);
+		
+		JLabel lblNewLabel_1 = new JLabel("Student No.");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1.setBounds(56, 131, 82, 34);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Student Name");
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1_1.setBounds(56, 190, 92, 34);
+		contentPane.add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_1_2 = new JLabel("Student Address");
+		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1_2.setBounds(56, 248, 103, 34);
+		contentPane.add(lblNewLabel_1_2);
+		
+		JButton btnNewButton = new JButton("UPDATE");
+		btnNewButton.setBounds(369, 292, 89, 23);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		contentPane.add(btnNewButton);
+		
+		JButton btnView = new JButton("VIEW");
+		btnView.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				viewRecords();
+			}
+		});
+		btnView.setBounds(270, 292, 89, 23);
+		contentPane.add(btnView);
+		
+		JButton btnNewButton_2 = new JButton("ADD");
+		btnNewButton_2.setBounds(172, 292, 89, 23);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				addRecord();
+			}
+		});
+		contentPane.add(btnNewButton_2);
+		
+		JButton btnNewButton_1 = new JButton("DELETE");
+		btnNewButton_1.setBounds(814, 381, 89, 23);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_3 = new JButton("CLEAR");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clearTextfield();
+			}
+		});
+		btnNewButton_3.setBounds(699, 381, 89, 23);
+		contentPane.add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("EXIT");
+		btnNewButton_4.setBounds(15, 420, 103, 34);
+		contentPane.add(btnNewButton_4);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(468, 75, 273, 34);
+		contentPane.add(textField_3);
+		textField_3.setColumns(10);
+		
+		tableView = new JTable();
+		tableView.setBackground(SystemColor.info);
+		tableView.setBounds(468, 119, 435, 246);
+		contentPane.add(tableView);
+		
+		JLabel homeicon = new JLabel("");
+		homeicon.setIcon(new ImageIcon("C:\\Users\\iinig\\Dropbox\\My PC (LAPTOP-IUUI4HAG)\\Downloads\\New folder\\OOP\\OOP\\OE5\\src\\icon\\home.png"));
+		homeicon.setBounds(15, 234, 31, 42);
+		contentPane.add(homeicon);
+		
+		JLabel nameicon = new JLabel("");
+		nameicon.setIcon(new ImageIcon("C:\\Users\\iinig\\Dropbox\\My PC (LAPTOP-IUUI4HAG)\\Downloads\\New folder\\OOP\\OOP\\OE5\\src\\icon\\name.png"));
+		nameicon.setBounds(15, 182, 35, 42);
+		contentPane.add(nameicon);
+		
+		JLabel numicon = new JLabel("");
+		numicon.setIcon(new ImageIcon("C:\\Users\\iinig\\Dropbox\\My PC (LAPTOP-IUUI4HAG)\\Downloads\\New folder\\OOP\\OOP\\OE5\\src\\icon\\number-sign.png"));
+		numicon.setBounds(15, 126, 31, 42);
+		contentPane.add(numicon);
+		
+		JLabel lblNewLabel_2 = new JLabel("User:");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 17));
+		lblNewLabel_2.setBounds(468, 24, 45, 29);
+		contentPane.add(lblNewLabel_2);
+	}
+	
+
+	//db connection
+		static Connection connect() {
+			try {
+				String myDriver = "com.mysql.cj.jdbc.Driver";
+				//connection string
+				String url = "jdbc:mysql://localhost:3306/copl_db";
+				Class.forName(myDriver);
+				return (Connection)DriverManager.getConnection(url,"root","");
+			}catch(Exception e) {
+				System.out.print("Cannot connect to the database");
+			}
+			return null;
+		}
+		//add record
+		public void addRecord() {
+			Connection con = connect();
+			Calendar date = Calendar.getInstance();
+			java.sql.Date datecreated = new java.sql.Date(date.getTime().getTime());
+			
+			try {
+				String sql = "INSERT INTO student_tbl (student_no, student_name,address,date_created) VALUES (?,?,?,NOW())";
+				PreparedStatement ps =(PreparedStatement) con.prepareStatement(sql);
+				
+				ps.setString(1,txtStudentNo.getText());
+				ps.setString(2,txtStudentName.getText());
+				ps.setString(3,txtAddress.getText());
+				//ps.setDate(4, date_created);
+				ps.execute();
+				
+				JOptionPane.showMessageDialog(null,"Record successfully added...");
+				clearTextfield();
+			}catch(Exception e) {
+				System.out.print("Error..." + e);
+			}
+		}
+		//View Records
+		public void viewRecords() {
+			// TODO Auto-generated method stub
+			Connection con = connect();
+			DefaultTableModel mod = new DefaultTableModel();
+			mod.addColumn("Number");
+			mod.addColumn("Student No");
+			mod.addColumn("Student Name");
+			mod.addColumn("Address");
+			mod.addColumn("Date of Registration");
+			
+			try {
+				String sql = "SELECT * from student_tbl";
+				Statement st = (Statement) con.createStatement();
+				ResultSet rs = st.executeQuery(sql);
+				while(rs.next()) {
+					mod.addRow(new Object[] {
+						rs.getInt("id"),
+						rs.getString("student_no"),	
+						rs.getString("student_name"),
+						rs.getString("address"),
+						rs.getString("date_created")
+					});
+				}
+				rs.close();
+				st.close();
+				con.close();
+				
+				tableView.setModel(mod);
+				//tableView.setAutoResizeMode(0);
+				tableView.getColumnModel().getColumn(0).setPreferredWidth(20);
+				tableView.getColumnModel().getColumn(1).setPreferredWidth(30);
+				tableView.getColumnModel().getColumn(2).setPreferredWidth(30);
+				tableView.getColumnModel().getColumn(3).setPreferredWidth(30);
+				tableView.getColumnModel().getColumn(4).setPreferredWidth(30);
+			}catch(Exception ex) {
+				System.out.print("Error..." + ex);
+			}
+			
+		}
+		
+		private void clearTextfield() {
+			// TODO Auto-generated method stub
+			txtStudentNo.setText("");
+			txtStudentName.setText("");
+			txtAddress.setText("");
+		}
+}
