@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+
+<html> 
+
+    <head> 
+
+        <title>get the value of textArea</title> 
+
+        <script src= 
+
+"https://code.jquery.com/jquery-1.12.4.min.js"> 
+
+        </script> 
+
+    </head> 
+
+    <body> 
+
+       <div id="msg"> 
+
+            <center> 
+
+                <h1 style="color: Blue;">Welcome</h1> 
+
+                <label>Enter Message :</label>
+
+                <br><textarea id="txtArea"></textarea><br><br> 
+
+                <button id="btn">Send</button> 
+
+              <!-- For javascript onclick() event handler
+
+                  <button id="btn" onclick="displayMessage()">Send</button> --> 
+
+            </center> 
+    </div>
+by: Francis Inigo Ignacio
+    </body> 
+
+  
+
+    <script> 
+
+    // Code in jquery
+
+ 
+
+        $(document).ready(function () { 
+
+            
+
+            //This function called when the button is clicked 
+
+            $("#btn").click(function () { 
+
+                
+
+                // val() method is used to get the values from  
+
+               // textarea and stored in txt variable 
+
+                var txt = $("#txtArea").val(); 
+
+                //alert(txt); displays message in alert box
+
+                console.log(txt);// display message on console 
+
+                //display message on same page 
+
+                //here html()-- this method reflect html tags effect in output.
+
+                 $("#msg").html("<B>Sent messages appear here. </B>");
+
+                 //to append data 
+
+                $("#msg").append(txt);
+
+                //here text()-- this method do not reflect html tags effect in output it simply display tags as a text like <h1>Sent messages appear here. </h1>
+
+               // $("#msg").text("<h1>Sent messages appear here. </h1>");
+
+                //$("#msg").append(txt);
+
+            }); 
+
+        }); 
+
+ 
+
+// Same code in Javascript 
+
+   /*     function displayMessage()
+
+        {
+
+            //getting textarea value by id using getElementById function
+
+            var message=document.getElementById("txtArea").value;
+
+            //displaying message on browser console
+
+            console.log(message);
+
+            //setting textarea data into div by using innerHTML and append function to append message to current text
+
+            //here we can use innerText to display everything in text format do not reflect html tags effect.
+
+            document.getElementById("msg").innerHTML=`<b>Sent messages appear here. </b>`;
+
+            //document.getElementById("msg").innerText=`<b>Sent messages appear here. </b>`;
+
+            document.getElementById("msg").append(message);
+
+        }*/
+
+    </script> 
+
+</html>
