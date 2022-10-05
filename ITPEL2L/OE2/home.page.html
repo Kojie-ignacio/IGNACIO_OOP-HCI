@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My First Ionic App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <ion-card-header>
+    <img src="assets/icon/rsz_1caloocan.jpg" alt="app-logo">
+    <ion-card-subtitle></ion-card-subtitle>
+  <ion-card-title>My Ionic First App</ion-card-title>
+  </ion-card-header>
+</ion-card>
+</ion-content>
+
+<ion-content class="ion-padding">
+  <p> {{text}} </p>
+  <ion-button (click) = "onChangeText()">Change Text</ion-button>
+  <ion-button (click) = "onOriginalText()">Original Text</ion-button>
+</ion-content>
+
+<ion-content>
+  <ion-card>
+    <ion-card-title>Register</ion-card-title>
+    <ion-label>First Name</ion-label>
+    <ion-input placeholder="Enter First Name"></ion-input>
+    <ion-label>Last Name</ion-label>
+    <ion-input placeholder="Enter Last Name"></ion-input>
+    <ion-label>Gender</ion-label>
+    <ion-input placeholder="Enter Gender"></ion-input>
+    <ion-label>Email</ion-label>
+   <ion-input placeholder="Enter Email"></ion-input>
+   <ion-label>Contact Number</ion-label>
+    <ion-input placeholder="Enter Contact No"></ion-input>
+    <ion-label>Address:</ion-label>
+   <ion-input placeholder="Enter Address"></ion-input>
+
+  </ion-card>
+  
+
+</ion-content>
+<ion-content class="ion-padding">
+  
+  <ion-button (click) = "submit()">submit</ion-button>
+
+</ion-content>
+
+<ion-content [fullscreen]="false">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">My First Ionic App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+  
+
+  <div id="container">
+    <strong>Ready to create an app?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  </div>
+</ion-content>
