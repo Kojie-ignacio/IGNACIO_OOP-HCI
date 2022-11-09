@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title class="ion-text-center">
+      <ion-icon name="add-outline"></ion-icon>
+    Add Student Record
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card class="ion-no-padding">
+    <ion-card-header class="ion-no-padding">
+      <ion-img  src="https://cdn-icons-png.flaticon.com/512/1484/1484799.png"></ion-img>
+    </ion-card-header>
+  </ion-card>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating"> <ion-icon name="person-outline"></ion-icon>Student Number </ion-label>
+      <ion-input [(ngModel)]="student_number" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> <ion-icon name="person-outline"></ion-icon>Student Name </ion-label>
+      <ion-input [(ngModel)]="student_name" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"><ion-icon name="mail-outline"></ion-icon> Email Address </ion-label>
+      <ion-input [(ngModel)]="email" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"><ion-icon name="call-outline"></ion-icon> Contact Number </ion-label>
+      <ion-input [(ngModel)]="contact_number" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"><ion-icon name="home-outline"></ion-icon> Home Address </ion-label>
+      <ion-input [(ngModel)]="home_address" type="text"></ion-input>
+    </ion-item>
+
+
+
+    <!-- Add Button -->
+    <ion-row>
+      <ion-col>
+        <ion-button position="floating"type="button" (click)="addStudent()" color="primary" shape="full" expand="block">
+          <ion-icon name="person-add-outline"></ion-icon> Add Student
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+
+</ion-content>
