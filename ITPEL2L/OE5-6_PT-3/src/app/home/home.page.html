@@ -1,0 +1,79 @@
+  <ion-header [translucent]="true">
+    <ion-toolbar color="danger">
+      <ion-title class="ion-text-center">
+        <ion-icon name="add-outline"></ion-icon>
+      Add Customer Record
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+
+    <ion-card class="ion-no-padding">
+      <ion-card-header class="ion-no-padding">
+        <ion-img  src="https://cdn-icons-png.flaticon.com/512/1484/1484799.png"></ion-img>
+      </ion-card-header>
+    </ion-card>
+    <ion-list>
+
+
+      <ion-item>
+        <ion-label position="floating"> <ion-icon name="person-outline"></ion-icon> Name </ion-label>
+        <ion-input [(ngModel)]="name" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="mail-outline"></ion-icon> Email Address </ion-label>
+        <ion-input [(ngModel)]="email" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="call-outline"></ion-icon> Contact Number </ion-label>
+        <ion-input [(ngModel)]="contact" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="home-outline"></ion-icon> Home Address </ion-label>
+        <ion-input [(ngModel)]="address" type="text"></ion-input>
+      </ion-item>
+      <ion-radio-group [(ngModel)] ="gender" >
+        <ion-item>
+          <ion-label>Gender</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="Male">Male</ion-select-option>
+            <ion-select-option value="Female">Female</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-radio-group>
+
+
+      <!-- Add Button -->
+      <ion-row>
+        <ion-col>
+          <ion-button position="floating"type="button" (click)="addStudent()" color="primary" shape="full" expand="block">
+            <ion-icon name="person-add-outline"></ion-icon> Add customer
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button type="button" (click)="getStudents" color="primary" shape="full" expand="block">View Records</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+
+
+    <!-- add component to display record-->
+    <ion-list>
+      <ion-list-header>Student List</ion-list-header>
+      <ion-item lines="inset" *ngfor="let student of students">
+        <ion-label>
+          <h5>{{students.id}} - ({{students.name}},{{student.email}},{{student.contact}},{{student.gender}})</h5>
+        </ion-label>
+        <div class="item-note">
+          <ion-icon name="create" style="zoom:2.0" [routerLink]="['/update-student', student.id]"></ion-icon>
+
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
