@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>
+      Peso to Dollar Converter
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card color="danger">
+    <img alt="Silhouette of mountains" src="https://play-lh.googleusercontent.com/yh-OGbmyhvY27_MnylsFv-C7M6IUu4z1gXdoi7rEsHtWvZ23zniIIM19fV-o4c5w351q" />
+    <ion-card-header>
+      <ion-card-title>Peso to Dollar</ion-card-title>
+      <ion-card-subtitle>Current Rate: 1 PHP = 0.018 USD</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+
+    </ion-card-content>
+
+    <div class = "list" class="ion-text-center">
+      <label class = "item item-input">
+         <input type = "text" placeholder = "Peso" class="custom" [(ngModel)]="peso"/>
+      </label>
+      <br>
+      <br>
+      <ion-button color="success" class="btn" (click)="convert()">CONVERT</ion-button>
+      <br>
+      <br>
+      <label class = "item item-input">
+         <input placeholder = "Dollar" calss="result" [(ngModel)]="resultDollar"/>
+      </label>
+<br>
+<br>
+  </div>
+  <br>
+</ion-card>
+
+
+</ion-content>
