@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Update Show List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_edit.Magazin.png"></ion-img>
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label position="floating" color="primary">Show/Anime</ion-label>
+          <ion-input [(ngModel)]="name" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" color="primary">Genre</ion-label>
+          <ion-input [(ngModel)]="genre" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" color="primary">Female Main Lead</ion-label>
+          <ion-input [(ngModel)]="f_main" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" color="primary">Male Main Lead</ion-label>
+          <ion-input [(ngModel)]="m_main" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" color="primary">No. of Episodes</ion-label>
+          <ion-input [(ngModel)]="epi" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" color="primary">Length per Episodes</ion-label>
+          <ion-input [(ngModel)]="length" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" color="primary">Rating</ion-label>
+          <ion-input [(ngModel)]="rate" type="text"></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-button type="button" (click)="updateStudent()" color="warning" shape="full" expand="block">Update Show
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-card-header>
+  </ion-card>
+    
+</ion-content>
